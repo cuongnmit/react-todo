@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import classnames from "classnames";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 export default class TodoTextInput extends Component {
   static propTypes = {
@@ -12,7 +12,7 @@ export default class TodoTextInput extends Component {
   };
 
   state = {
-    text: this.props.text || "",
+    text: this.props.text || '',
   };
 
   handleSubmit = (e) => {
@@ -20,7 +20,7 @@ export default class TodoTextInput extends Component {
     if (e.which === 13) {
       this.props.onSave(text);
       if (this.props.newTodo) {
-        this.setState({ text: "" });
+        this.setState({ text: '' });
       }
     }
   };
@@ -40,7 +40,7 @@ export default class TodoTextInput extends Component {
       <input
         className={classnames({
           edit: this.props.editing,
-          "new-todo": this.props.newTodo,
+          'new-todo': this.props.newTodo,
         })}
         type="text"
         placeholder={this.props.placeholder}
